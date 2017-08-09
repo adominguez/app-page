@@ -92,10 +92,141 @@
 
 .md-html {
   & h1 {
-    color: #333;
+    color: #212121;
     font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 40px;
     font-weight: 100;
+  }
+  & h2 {
+    color: #666;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 100;
+  }
+  & h3 {
+    color: #212121;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bolder;
+  }
+  & h4 {
+    color: #666;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 100;
+  }
+  & h5 {
+    color: #666;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 100;
+  }
+  & h6 {
+    color: #666;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 100;
+  }
+  & p {
+    color: #666;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 100;
+  }
+  & blockquote {
+    color: #666;
+    background: #e5e5e5;
+    padding: 0.5em 1em;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 100;
+    box-sizing: border-box;
+    border-left: 5px solid #666;
+  }
+  & blockquote p{
+     margin: 0;
+  }
+  & code {
+    background: #e5e5e5;
+    padding: 0.2em;
+    border-radius: 5px;
+  }
+  & ul, & ol {
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    & li {
+      padding: 0.5em 0;
+    }
+  }
+  a {
+    color: #8BC34A;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #212121;
+    text-decoration: none;
+  }
+  a:visited {
+    color: #FF4081;
+    text-decoration: underline
+  }
+  hr {
+    border-color: #fafafa;
+  }
+  & pre{
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+  }
+  & pre code {
+    display: inline;
+    max-width: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    line-height: inherit;
+    word-wrap: normal;
+    background-color: transparent;
+    border: 0;
+  }
+  & pre code.lang-html {
+    color: #000080;
+  }
+  & pre code.lang-html .tag .attr-name{
+    color: #008080;
+  }
+  & pre code.lang-html .tag .attr-value{
+    color: #d14;
+  }
+
+  & pre code.lang-js {
+    color: #000080;
+  }
+  & pre code.lang-js .keyword{
+    color: #333;
+    font-weight: bold;
+  }
+  & pre code.lang-js .string{
+    color: #d14;
+  }
+  & pre code.lang-js .function{
+    color: #0086b3;
+  }
+  & pre code.lang-js .number{
+    color: #6f42c1;
+  }
+
+  & pre code.lang-css {
+    color: #000080;
+  }
+  & pre code.lang-css .selector {
+    color: #d14;
+  }
+  & pre code.lang-css .property {
+    color: #0086b3;
   }
 }
 
