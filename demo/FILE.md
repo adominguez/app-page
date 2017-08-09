@@ -61,9 +61,23 @@ Puedes añadir tantas líneas y párrafos como quieras.
 
 ```js
 (function(demo) {
-  var foo = 'hola';
-  console.log(foo);
+  var foo = {
+    type: Array,
+    value: [{
+      name: 'Alberto',
+      lastname: 'dominguez'
+    }],
+  };
+  for(var x= 0; x < foo.length; x++) {
+    console.log(foo);
+  };
   demo.open()
+  function open() {
+    if(!this.open) {
+      Polymer.dom(this.root).querySelector('#foo');
+      this.set('open', true)
+    }
+  }
 })
 ```
 
