@@ -77,7 +77,7 @@ Puedes añadir tantas líneas y párrafos como quieras.
       Polymer.dom(this.root).querySelector('#foo');
       this.set('open', true)
     }
-  }
+  };
 })
 ```
 
