@@ -53,6 +53,10 @@ Creando códigos de bloque.
 Puedes añadir tantas líneas y párrafos como quieras.  
 ~~~
 
+```html
+<app-page></app-page>
+```
+
 Reglas horizontales
 
 ***
