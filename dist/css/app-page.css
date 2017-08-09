@@ -1,0 +1,85 @@
+@keyframes pulse {
+  0%,
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+:host([hidden]) {
+  display: none; }
+
+:host {
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  box-sizing: border-box;
+  background-color: var(--app-header-bg-color, transparent);
+  @apply (--app-header); }
+  :host .panel-left {
+    color: var(--app-header-panel-left-color, #666);
+    font-weight: lighter;
+    padding: 1em;
+    box-sizing: border-box;
+    width: calc(100% - 200px);
+    @apply (--app-header-panel-left); }
+    :host .panel-left__title {
+      font-weight: lighter;
+      color: var(--app-header-title-color, #212121);
+      font-size: 22px;
+      margin: 0;
+      text-transform: capitalize;
+      @apply (--app-header-title); }
+    :host .panel-left__subtitle {
+      font-weight: lighter;
+      margin: 0;
+      color: var(--app-header-subtitle-color, #666);
+      font-size: 18px;
+      @apply (--app-header-subtitle); }
+    :host .panel-left__left-content {
+      padding: 2em 0;
+      @apply (--app-header-title-left-content); }
+  :host .panel-right {
+    color: var(--app-header-panel-right-color, #666);
+    width: 200px;
+    border-left: 1px solid var(--app-page-panel-right-b-l, #e5e5e5);
+    position: absolute;
+    padding: 1em;
+    right: 0;
+    height: 100%;
+    background-color: var(--app-page-panel-right-bg-color, #fff);
+    box-sizing: border-box;
+    @apply (--app-page-panel-right); }
+    :host .panel-right__right-content {
+      @apply (--app-header-title-right-content); }
+
+:host([hide-panel-right]) {
+  display: block;
+  @apply (--app-header-hide-panel-right); }
+  :host([hide-panel-right]) .panel-left {
+    width: 100%;
+    @apply (--app-header-hide-panel-right-panel-left); }
+
+@media (max-width: 960px) {
+  :host([responsive]) {
+    display: block;
+    @apply (--app-header-responsive); }
+    :host([responsive]) .panel-left {
+      width: 100%;
+      @apply (--app-header-responsive-panel-left); }
+    :host([responsive]) .panel-right {
+      position: relative;
+      border-left: 0;
+      border-top: 1px solid var(--app-page-responsive-panel-right-b-t, #e5e5e5);
+      width: 100%;
+      @apply (--app-header-responsive-panel-right); } }
+
+.md-html h1 {
+  color: #333;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 100; }
+
+:host([fade-in]) {
+  animation: pulse 1.5s; }

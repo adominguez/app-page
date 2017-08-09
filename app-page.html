@@ -1,5 +1,10 @@
-# \<app-page\>
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../zero-md/zero-md.html">
+<link rel="import" href="app-page-styles.html">
+<link rel="stylesheet" href="../zero-md/highlight-themes/default.css">
+<link rel="stylesheet" href="../zero-md/markdown-themes/default.css">
 
+<!--
 `app-page`
 This component shows a structure of page with the possibility of add a markdown file inside
 
@@ -46,3 +51,29 @@ Custom property                           | Description                         
 --app-page-panel-right-bg-color           | background for host([hide-panel-right]) panel-right | #fff          |
 --app-header-hide-panel-right-panel-left  | empty mixin for host([hide-panel-right]) panel-left | {}            |
 --app-header-responsive-panel-right       | empty mixin for host([responsive]) panel-right      | {}            |
+
+@demo demo/index.html
+-->
+
+<dom-module id="app-page">
+  <style include="app-page-styles app-page-shared-styles"></style>
+  <template is="dom-bind" id="component0">
+    <div class="panel-left">
+      <h1 class="panel-left__title" hidden$="[[!titlePage]]">[[titlePage]]</h1>
+      <h2 class="panel-left__subtitle" hidden$="[[!subtitlePage]]">[[subtitlePage]]</h2>
+      <div class="panel-left__left-content">
+        <slot name="left-content">
+          <zero-md file="{{readme}}" hidden$="[[!readme]]">
+            <div class="md-html"></div>
+          </zero-md>
+        </slot>
+      </div>
+    </div>
+    <div class="panel-right" hidden$="[[hidePanelRight]]">
+      <div class="panel-right__right-content">
+        <slot name="right-content">right content</slot>
+      </div>
+    </div>
+  </template>
+  <script src="app-page.js"></script>
+</dom-module>
