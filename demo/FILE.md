@@ -54,7 +54,24 @@ Puedes añadir tantas líneas y párrafos como quieras.
 ~~~
 
 ```html
-<app-page></app-page>
+<app-page readme="file.md">
+  <content></content>
+</app-page>
+```
+
+```js
+(function(demo) {
+  var foo = 'hola';
+  console.log(foo);
+  demo.open()
+})
+```
+
+```css
+.foo {
+  color: red;
+  background: red;
+}
 ```
 
 Reglas horizontales
