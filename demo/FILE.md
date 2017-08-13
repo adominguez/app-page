@@ -88,6 +88,14 @@ Puedes añadir tantas líneas y párrafos como quieras.
 }
 ```
 
+### Cards
+
+<card>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pulvinar eros vitae diam mattis, vitae hendrerit ipsum eleifend. Nulla facilisi. Sed vitae nulla sagittis, vestibulum risus ut, bibendum augue. Cras pretium sed sem sed tincidunt. In sed tortor quam. Etiam a neque dolor. Praesent mollis magna ut diam posuere, at hendrerit enim tempus. Curabitur dignissim magna nec congue fringilla.</p>
+
+  <p>Cras vulputate non sem vitae vulputate. Suspendisse potenti. Maecenas dapibus elementum efficitur. Aliquam diam sem, convallis sed quam a, porta feugiat neque. Aliquam fringilla eleifend nulla, rhoncus hendrerit nisi maximus vitae. Vestibulum nisl tellus, fermentum sit amet lorem sed, vestibulum molestie ligula. Duis a magna tincidunt, ornare massa vel, molestie turpis. Quisque vitae suscipit sapien, at hendrerit magna. Cras a euismod ex.</p>
+</card>
+
 Reglas horizontales
 
 ***
