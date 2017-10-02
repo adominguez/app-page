@@ -24,7 +24,30 @@
        */
       readme: {
         type: String,
+        value: null,
+        observer: '_setTypeOfPage'
+      },
+      /**
+       * component url
+       */
+      componentName: {
+        type: String,
+        value: null,
+        observer: '_setTypeOfPage'
+      },
+      /**
+       * component url
+       */
+      _componentUrl: {
+        type: String,
         value: null
+      },
+      /**
+       * Show demo or doc if it´s false show demo
+       */
+      showDoc: {
+        type: Boolean,
+        value: false
       },
       /**
        * if is true dont show the panel right
@@ -46,6 +69,15 @@
       responsive: {
         type: Boolean,
         value: false
+      }
+    },
+    _setTypeOfPage: function() {
+      if(this.componentName !== '' || null) {
+        var demo = this.showDoc ? 'index.html' : 'demo/index.html';
+        this._componentUrl = `../../bower_components/${this.componentName}/${demo}`;
+      }
+      if((this.readme !== '' || null) && (this.componentName !== '' || null)) {
+        this.componentName = null;
       }
     }
 
