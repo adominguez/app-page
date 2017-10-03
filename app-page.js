@@ -20,29 +20,38 @@
         value: null
       },
       /**
-       * readme file
+       * Host of url
        */
-      readme: {
-        type: String,
-        value: null,
-        observer: '_setTypeOfPage'
-      },
       host: {
         type: String,
-        value: 'http://adominguez.github.io'
+        value: 'http://adominguez.github.io/'
       },
       /**
-       * component url
+       * Host of url
        */
-      componentName: {
+      route: {
+        type: String,
+        value: 'bower_components/'
+      },
+      /**
+       * file name
+       */
+      fileName: {
         type: String,
         value: null,
         observer: '_setTypeOfPage'
       },
       /**
+       * type of file md | html
+       */
+      fileType: {
+        type: String,
+        value: 'html'
+      },
+      /**
        * component url
        */
-      _componentUrl: {
+      _fileUrl: {
         type: String,
         value: null
       },
@@ -51,7 +60,8 @@
        */
       showDoc: {
         type: Boolean,
-        value: false
+        value: false,
+        observer: '_setTypeOfPage'
       },
       /**
        * if is true dont show the panel right
@@ -76,13 +86,18 @@
       }
     },
     _setTypeOfPage: function() {
-      if(this.componentName !== '' || null) {
-        var demo = this.showDoc ? 'index.html' : 'demo/index.html';
-        this._componentUrl = `${this.host}/bower_components/${this.componentName}/${demo}`;
+      var url;
+      var demo = this.showDoc ? 'index.html' : 'demo/index.html';
+      if(this.fileType === 'html') {
+        url = `${this.host}${this.route}${this.fileName}/${demo}`;
+        this.$.zero.hidden = true;
+        this.$.iframe.hidden = false;
+      } else {
+        url = `${this.host}${this.route}${this.fileName}.md`;
+        this.$.zero.hidden = false;
+        this.$.iframe.hidden = true;
       }
-      if((this.readme !== '' || null) && (this.componentName !== '' || null)) {
-        this.componentName = null;
-      }
+      this._fileUrl = url;
     }
 
   });
