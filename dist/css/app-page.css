@@ -129,7 +129,6 @@ card {
       padding: 0 1em;
       @apply --app-page-subtitle; }
     :host .panel-left__left-content {
-      padding: 1em 0;
       @apply --app-page-title-left-content; }
       :host .panel-left__left-content__left-content-down {
         padding: 2em 0; }
