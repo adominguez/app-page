@@ -27,6 +27,10 @@
         value: null,
         observer: '_setTypeOfPage'
       },
+      host: {
+        type: String,
+        value: 'http://adominguez.github.io'
+      },
       /**
        * component url
        */
@@ -74,7 +78,7 @@
     _setTypeOfPage: function() {
       if(this.componentName !== '' || null) {
         var demo = this.showDoc ? 'index.html' : 'demo/index.html';
-        this._componentUrl = `../../bower_components/${this.componentName}/${demo}`;
+        this._componentUrl = `${this.host}/bower_components/${this.componentName}/${demo}`;
       }
       if((this.readme !== '' || null) && (this.componentName !== '' || null)) {
         this.componentName = null;
