@@ -19,10 +19,31 @@
   background-color: var(--app-page-bg-color, #fafafa);
   font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   @apply --app-page; }
-  :host .panel-left {
+  :host .sidebar {
     position: absolute;
     top: 0;
     left: 0;
+    height: 100%;
+    will-change: transform;
+    box-sizing: border-box;
+    background-color: var(--app-page-sidebar-bg-color, #fff);
+    width: var(--app-page-sidebar-width, 20%);
+    border-right: 1px solid var(--app-page-panel-right-b-l-color, #e5e5e5);
+    @apply --app-page-sidebar; }
+    :host .sidebar__header {
+      display: block;
+      background-color: var(--app-page-panel-left-header-bg-color, #00695c);
+      color: var(--app-page-panel-left-header-color, #fff);
+      @apply --app-page-panel-left-header; }
+    :host .sidebar__content {
+      height: 100%;
+      width: 100%;
+      overflow-y: auto;
+      @apply --app-page-title-left-content; }
+  :host .panel-left {
+    position: absolute;
+    top: 0;
+    left: var(--app-page-sidebar-width, 20%);
     height: 100%;
     will-change: transform;
     box-sizing: border-box;

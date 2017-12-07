@@ -19,6 +19,19 @@ this component is responsive at 769px if the property resposive is true. Then th
 <dom-module id="app-page">
   <style include="app-page-styles app-page-shared-styles"></style>
   <template is="dom-bind" id="component0">
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar__header">
+        <slot name="sidebar-header">
+          sidebar header content
+        </slot>
+      </div>
+      <div class="sidebar__content">
+        <slot name="sidebar-content">
+          sidebar content
+        </slot>
+      </div>
+    </div>
+
     <div class="panel-left" id="panel-left">
       <div class="panel-left__header">
         <h1 class="panel-left__header__title" hidden$="[[!titlePage]]">[[titlePage]]</h1>
