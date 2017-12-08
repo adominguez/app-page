@@ -8,9 +8,116 @@
   }
 }
 
-:host([hidden]) {
+:host([hidden]), [hidden] {
   display: none;
 }
+
+:host([show-overlay]) {
+  .overlay {
+    opacity: 1;
+    z-index: 999;
+  }
+}
+
+:host([hide-header]) {
+  .sidebar,
+  .panel-left,
+  .panel-right {
+    padding-top: 0 !important;
+  }
+  .header {
+    transform: translateY(calc(var(--app-page-header-height, 60px)* -1));
+  }
+}
+
+:host([full-header]) {
+  .header {
+    left: 0;
+    width: 100%;
+  }
+  .sidebar {
+    padding-top: var(--app-page-header-height, 60px);
+  }
+}
+
+:host([hide-footer]) {
+  .sidebar,
+  .panel-left,
+  .panel-right {
+    padding-bottom: 0 !important;
+  }
+  .footer {
+    transform: translateY(var(--app-page-footer-height, 80px));
+  }
+}
+
+:host([full-footer]) {
+  .footer {
+    left: 0;
+    width: 100%;
+  }
+  .sidebar {
+    padding-bottom: var(--app-page-footer-height, 80px);
+  }
+}
+
+:host([hide-sidebar]) {
+  .header {
+    left: 0;
+    width: 100%;
+  }
+  .footer {
+    left: 0;
+    width: 100%;
+  }
+  .sidebar {
+    width: 0;
+  }
+  .panel-left {
+    left: 0;
+    width: calc(100% - var(--app-page-panel-right-width, 200px));
+  }
+}
+
+:host([hide-panel-right]) {
+  .panel-right {
+    width: 0;
+  }
+  .panel-left {
+    width: calc(100% - var(--app-page-sidebar-width, 20%));;
+  }
+}
+
+:host([hide-panel-right]):host([hide-sidebar]) {
+  .panel-left {
+    width: 100%;
+  }
+}
+
+@media(max-width: 769px) {
+  :host([responsive]) {
+   display: flex;
+   flex-direction: column;
+   overflow: auto;
+   position: relative;
+   @apply --app-page-responsive;
+   .panel-left {
+     position: relative;
+     width: 100%;
+     height: auto;
+     @apply --app-page-responsive-panel-left;
+   }
+   .panel-right {
+     position: relative;
+     border-left: 0;
+     border-top: 1px solid var(--app-page-border-color, #e5e5e5);
+     padding-top: 20px;
+     width: 100%;
+     @apply --app-page-responsive-panel-right;
+   }
+ }
+}
+
 
 :host {
   display: block;
@@ -23,6 +130,38 @@
   background-color: var(--app-page-bg-color, #fafafa);
   font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   @apply --app-page;
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 200ms ease;
+    &__content {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .header {
+    height: var(--app-page-header-height, 60px);
+    position: absolute;
+    top: 0;
+    left: var(--app-page-sidebar-width, 20%);
+    box-sizing: border-box;
+    display: block;
+    width: calc(100% - var(--app-page-sidebar-width, 20%));
+    background-color: var(--app-page-header-bg-color, #b71c1c);
+    color: var(--app-page-header-color, #fff);
+    z-index: 1;
+    transition: transform 200ms ease, left 200ms ease;
+    @apply --app-page-header;
+  }
   .sidebar {
     position: absolute;
     top: 0;
@@ -32,7 +171,10 @@
     box-sizing: border-box;
     background-color: var(--app-page-sidebar-bg-color, #fff);
     width: var(--app-page-sidebar-width, 20%);
-    border-right: 1px solid var(--app-page-panel-right-b-l-color, #e5e5e5);
+    border-right: 1px solid var(--app-page-border-color, #e5e5e5);
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: padding-top 200ms ease, padding-bottom 200ms ease, width 200ms ease;
     @apply --app-page-sidebar;
     &__header {
       display: block;
@@ -50,11 +192,14 @@
   .panel-left {
     position: absolute;
     top: 0;
-    left: var(--app-page-sidebar-width, 20%);;
+    left: var(--app-page-sidebar-width, 20%);
     height: 100%;
     will-change: transform;
     box-sizing: border-box;
-    width: calc(100% - var(--app-page-panel-right-width, 200px));
+    width: calc(100% - var(--app-page-sidebar-width, 20%) - var(--app-page-panel-right-width, 200px));
+    padding-top: var(--app-page-header-height, 60px);
+    padding-bottom: var(--app-page-footer-height, 80px);
+    transition: padding-top 200ms ease, padding-bottom 200ms ease, left 200ms ease, width 200ms ease;
     @apply --app-page-panel-left;
     &__header {
       display: block;
@@ -85,12 +230,15 @@
   }
   .panel-right {
     width: var(--app-page-panel-right-width, 200px);
-    border-left: 1px solid var(--app-page-panel-right-b-l-color, #e5e5e5);
+    border-left: 1px solid var(--app-page-border-color, #e5e5e5);
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
+    padding-top: var(--app-page-header-height, 60px);
+    padding-bottom: var(--app-page-footer-height, 80px);
     background-color: var(--app-page-panel-right-bg-color, #fff);
+    transition: padding-top 200ms ease, padding-bottom 200ms ease, width 200ms ease;
     @apply --app-page-panel-right;
     &__right-content {
       overflow-y: auto;
@@ -98,37 +246,20 @@
       @apply --app-page-title-right-content;
     }
   }
-}
-
-:host([hide-panel-right]) {
-  display: block;
-  @apply --app-page-hide-panel-right;
-  .panel-left {
-    width: 100%;
-    @apply --app-page-hide-panel-right-panel-left;
+  .footer {
+    height: var(--app-page-footer-height, 80px);
+    position: absolute;
+    bottom: 0;
+    left: var(--app-page-sidebar-width, 20%);
+    box-sizing: border-box;
+    display: block;
+    width: calc(100% - var(--app-page-sidebar-width, 20%));
+    background-color: var(--app-page-footer-bg-color, #212121);
+    color: var(--app-page-header-color, #fff);
+    z-index: 1;
+    transition: transform 200ms ease, left 200ms ease;
+    @apply --app-page-header;
   }
-}
-
-@media(max-width: 769px) {
-  :host([responsive]) {
-   display: flex;
-   flex-direction: column;
-   overflow: auto;
-   @apply --app-page-responsive;
-   .panel-left {
-     position: relative;
-     width: 100%;
-     height: auto;
-     @apply --app-page-responsive-panel-left;
-   }
-   .panel-right {
-     position: relative;
-     border-left: 0;
-     border-top: 1px solid var(--app-page-responsive-panel-right-b-t-color, #e5e5e5);
-     width: 100%;
-     @apply --app-page-responsive-panel-right;
-   }
- }
 }
 
 :host([fade-in]) {

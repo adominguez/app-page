@@ -19,12 +19,29 @@ this component is responsive at 769px if the property resposive is true. Then th
 <dom-module id="app-page">
   <style include="app-page-styles app-page-shared-styles"></style>
   <template is="dom-bind" id="component0">
+
+    <div class="overlay">
+      <div class="overlay__content">
+        <slot name="overlay-content">
+          Overlay content
+        </slot>
+      </div>
+    </div>
+
+    <div class="header" id="header">
+      <div class="header__content">
+        <slot name="header-content">
+          header content
+        </slot>
+      </div>
+    </div>
+
     <div class="sidebar" id="sidebar">
-      <div class="sidebar__header">
+      <!--<div class="sidebar__header">
         <slot name="sidebar-header">
           sidebar header content
         </slot>
-      </div>
+      </div>-->
       <div class="sidebar__content">
         <slot name="sidebar-content">
           sidebar content
@@ -48,10 +65,17 @@ this component is responsive at 769px if the property resposive is true. Then th
         </div>
       </div>
     </div>
-    <div class="panel-right" hidden$="[[hidePanelRight]]">
+    <div class="panel-right">
       <div class="panel-right__right-content">
         <slot name="right-content">
           right content
+        </slot>
+      </div>
+    </div>
+    <div class="footer" id="footer">
+      <div class="footer__content">
+        <slot name="footer-content">
+          footer content
         </slot>
       </div>
     </div>
