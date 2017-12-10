@@ -16,10 +16,62 @@
     </test-fixture>
 
     <script>
+      function isVisible(elem) {
+        return !!( elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length );
+      }
       suite('<app-page>', function() {
         var el;
         setup(function() {
           el = fixture('default');
+        });
+
+        suite('loading', function() {
+          test('if showProgressBar is true, the progressbar must be showed', function() {
+            el.showProgressBar = true;
+            assert.isFalse(el.$.progressbar.hidden)
+          });
+          test('if method startLoading is fired, progressbar must be showed ', function() {
+            el.startLoading();
+            assert.isFalse(el.$.progressbar.hidden)
+          });
+          test('if method stopLoading is fired, progressbar musn´t be showed ', function() {
+            el.showProgressBar = true;
+            el.stopLoading();
+            assert.isTrue(el.$.progressbar.hidden)
+          });
+        });
+
+        suite('sidebar', function() {
+          test('if element is responsive, the resize is minor than 768 and hideSidebar is false, the sidebar must be showed on fire openOverlay', function() {
+            el.responsive = true;
+            el.hideSidebar = false;
+            window.resizeTo(480, 360);
+            el.openSidebar();
+            assert.isTrue(el.$.sidebar.classList.contains('opened'));
+          });
+          test('if element is responsive, the resize is minor than 768 and hideSidebar is false, the sidebar musn´t be showed on fire closeOverlay', function() {
+            el.responsive = true;
+            el.hideSidebar = false;
+            window.resizeTo(480, 360);
+            el.openSidebar();
+            el.closeSidebar();
+            assert.isFalse(el.$.sidebar.classList.contains('opened'));
+          });
+          test('if sidebar is opened, and click in overlay, the sidebar must be closed', function() {
+            el.responsive = true;
+            el.hideSidebar = false;
+            window.resizeTo(480, 360);
+            el.openSidebar();
+            el.$.overlay.click();
+            assert.isFalse(el.$.sidebar.classList.contains('opened'));
+          });
+        });
+
+        suite('overlay', function() {
+          test('On fire openOverlay must be show the overlay', function() {
+            el.openOverlay();
+            assert.isTrue(isVisible(el.$.overlay));
+          });
         });
       });
     </script>
