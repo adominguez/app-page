@@ -165,12 +165,14 @@
     display: block;
     opacity: 0;
     z-index: -1;
-    transition: opacity 200ms ease; }
+    transition: opacity 200ms ease;
+    @apply --app-page-overlay; }
     :host .overlay__content {
       position: absolute;
       left: 50%;
       top: 50%;
-      transform: translate(-50%, -50%); }
+      transform: translate(-50%, -50%);
+      @apply --app-page-overlay-content; }
   :host .header {
     height: var(--app-page-header-height, 60px);
     position: absolute;
@@ -198,16 +200,6 @@
     padding-bottom: 0;
     transition: padding-top 200ms ease, padding-bottom 200ms ease, width 200ms ease;
     @apply --app-page-sidebar; }
-    :host .sidebar__header {
-      display: block;
-      background-color: var(--app-page-panel-left-header-bg-color, #00695c);
-      color: var(--app-page-panel-left-header-color, #fff);
-      @apply --app-page-panel-left-header; }
-    :host .sidebar__content {
-      height: 100%;
-      width: 100%;
-      overflow-y: auto;
-      @apply --app-page-title-left-content; }
   :host #progressbar {
     width: 100%;
     background: rgba(159, 159, 159, 0.5);
@@ -221,7 +213,8 @@
     background: #474747;
     position: absolute;
     display: inline-block;
-    animation: load 15s ease infinite; }
+    animation: load 15s ease infinite;
+    @apply --app-page-loading; }
   :host .panel-left {
     position: absolute;
     top: 0;
@@ -269,7 +262,7 @@
     color: var(--app-page-header-color, #fff);
     z-index: 1;
     transition: transform 200ms ease, left 200ms ease;
-    @apply --app-page-header; }
+    @apply --app-page-footer; }
 
 :host([fade-in]) {
   animation: pulse 1.5s; }
