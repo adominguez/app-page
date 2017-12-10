@@ -1,13 +1,15 @@
 {
   "name": "app-page",
   "version": "1.1.1",
-  "description": "This component shows a box with information inside",
+  "description": "This component shows a page layout with an structure of one or two columns.",
   "main": "app-page.html",
   "author": "ADominguez",
   "library": "Polymer 1",
   "keywords": [
-    "card",
-    "color"
+    "page",
+    "layout",
+    "structure",
+    "loading page"
   ],
   "license": "MIT",
   "repository": {
