@@ -238,7 +238,7 @@
               "column": 4
             },
             "end": {
-              "line": 101,
+              "line": 104,
               "column": 5
             }
           },
@@ -247,15 +247,15 @@
         },
         {
           "name": "openSidebar",
-          "description": "",
+          "description": "if the component is responsive, the device is minor than 768px and hideSidebar is false open the sidebar",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 103,
+              "line": 109,
               "column": 4
             },
             "end": {
-              "line": 107,
+              "line": 116,
               "column": 5
             }
           },
@@ -264,15 +264,15 @@
         },
         {
           "name": "closeSidebar",
-          "description": "",
+          "description": "This close the sidebar if the sidebar is opened",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 109,
+              "line": 120,
               "column": 4
             },
             "end": {
-              "line": 113,
+              "line": 126,
               "column": 5
             }
           },
@@ -280,16 +280,33 @@
           "params": []
         },
         {
-          "name": "_hideSidebar",
-          "description": "",
-          "privacy": "protected",
+          "name": "openOverlay",
+          "description": "Open the overlay",
+          "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 115,
+              "line": 130,
               "column": 4
             },
             "end": {
-              "line": 119,
+              "line": 132,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "closeOverlay",
+          "description": "Close the overlay",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 136,
+              "column": 4
+            },
+            "end": {
+              "line": 138,
               "column": 5
             }
           },
@@ -306,7 +323,7 @@
           "column": 10
         },
         "end": {
-          "line": 121,
+          "line": 140,
           "column": 3
         }
       },
@@ -517,11 +534,11 @@
           "range": {
             "file": "app-page.html",
             "start": {
-              "line": 36,
+              "line": 31,
               "column": 8
             },
             "end": {
-              "line": 38,
+              "line": 33,
               "column": 15
             }
           }
@@ -532,11 +549,11 @@
           "range": {
             "file": "app-page.html",
             "start": {
-              "line": 44,
+              "line": 39,
               "column": 8
             },
             "end": {
-              "line": 46,
+              "line": 41,
               "column": 15
             }
           }
@@ -547,11 +564,11 @@
           "range": {
             "file": "app-page.html",
             "start": {
-              "line": 57,
+              "line": 52,
               "column": 10
             },
             "end": {
-              "line": 59,
+              "line": 54,
               "column": 17
             }
           }
@@ -562,11 +579,11 @@
           "range": {
             "file": "app-page.html",
             "start": {
-              "line": 61,
+              "line": 56,
               "column": 12
             },
             "end": {
-              "line": 63,
+              "line": 58,
               "column": 19
             }
           }
@@ -577,11 +594,11 @@
           "range": {
             "file": "app-page.html",
             "start": {
-              "line": 69,
+              "line": 64,
               "column": 10
             },
             "end": {
-              "line": 71,
+              "line": 66,
               "column": 17
             }
           }
@@ -592,11 +609,11 @@
           "range": {
             "file": "app-page.html",
             "start": {
-              "line": 76,
+              "line": 71,
               "column": 10
             },
             "end": {
-              "line": 78,
+              "line": 73,
               "column": 17
             }
           }
