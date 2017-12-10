@@ -90,6 +90,10 @@
         type: Boolean,
         value: false,
         reflectToAttribute: true
+      },
+      showProgressBar: {
+        type: Boolean,
+        value: false
       }
     },
 
@@ -136,7 +140,19 @@
      */
     closeOverlay: function() {
       this.showOverlay = false;
-    }
+    },
+    /**
+     * Close the overlay
+     */
+    startLoading: function() {
+      this.showProgressBar = true;
+    },
+    /**
+     * Close the overlay
+     */
+    stopLoading: function() {
+      this.showProgressBar = false;
+    },
 
   });
 }());

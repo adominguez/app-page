@@ -8,6 +8,15 @@
   }
 }
 
+@keyframes load{
+  0%{
+    width: 2%;
+  }
+  10%{
+    width: 10%;
+  }
+}
+
 :host([hidden]),
 [hidden] {
   display: none;
@@ -272,6 +281,22 @@
       overflow-y: auto;
       @apply --app-page-title-left-content;
     }
+  }
+  #progressbar{
+    width: 100%;
+    background: rgba(159, 159, 159, 0.5);
+    padding: 1px;
+    height: 4px;
+  }
+  #loading{
+    transition: all 500ms ease;
+    height: 4px;
+    width: calc(100% - 10px);
+    border-radius: 8px;
+    background: #474747;
+    position: absolute;
+    display: inline-block;
+    animation: load 15s ease infinite;
   }
   .panel-left {
     position: absolute;
