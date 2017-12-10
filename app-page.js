@@ -105,7 +105,7 @@
     },
 
     /**
-     *
+     * if the component is responsive, the device is minor than 768px and hideSidebar is false open the sidebar
      */
     openSidebar: function() {
       if(this.responsive && document.documentElement.clientWidth <= 768 && !this.hideSidebar) {
@@ -115,7 +115,9 @@
         this.showOverlay = true;
       }
     },
-
+    /**
+     * This close the sidebar if the sidebar is opened
+     */
     closeSidebar: function() {
       if(this.$.sidebar.classList.contains('opened')) {
         this.$.sidebar.classList.remove('opened');
@@ -123,11 +125,15 @@
         this.$.overlay.classList.remove('hide-content');
       }
     },
-
+    /**
+     * Open the overlay
+     */
     openOverlay: function() {
       this.showOverlay = true;
     },
-
+    /**
+     * Close the overlay
+     */
     closeOverlay: function() {
       this.showOverlay = false;
     }
