@@ -88,8 +88,8 @@
     padding-top: var(--app-page-header-height, 60px);
     transition: padding-top 200ms ease; }
   :host([responsive]) .panel-left {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0;
+    padding-bottom: 0;
     position: relative;
     left: 0;
     height: auto;
@@ -99,8 +99,8 @@
     border-top: 1px solid var(--app-page-border-color, #e5e5e5);
     position: relative;
     left: 0;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0;
+    padding-bottom: 0;
     border-left: none;
     width: 100%; }
   :host([responsive]) .footer {
