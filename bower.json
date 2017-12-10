@@ -1,6 +1,6 @@
 {
   "name": "app-page",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "This component shows a page layout with an structure of one or two columns.",
   "main": "app-page.html",
   "author": "ADominguez",
