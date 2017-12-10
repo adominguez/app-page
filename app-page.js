@@ -93,17 +93,29 @@
       }
     },
 
-    /*_setHeader: function(value) {
-      if(value) {
-        this.$.header.style = 'transform: translateY(' + this.$.header.clientHeight * (-1) + 'px)';
-      } else {
-        this.$.header.style = 'transform: translateY(40px)';
-      }
+    ready: function() {
+      Polymer.RenderStatus.afterNextRender(this, function() {
+        this._hideSidebar();
+      })
     },
 
-    _setFooter: function(value) {
-      return value ? this.$.footer.clientHeight  + 'px' : 0;
-    },*/
+    openSidebar: function() {
+      this.$.sidebar.classList.add('opened');
+      this.$.overlay.classList.add('hide-content');
+      this.showOverlay = true;
+    },
+
+    closeSidebar: function() {
+      this.$.sidebar.classList.remove('opened');
+      this.showOverlay = false;
+      this.$.overlay.classList.remove('hide-content');
+    },
+
+    _hideSidebar: function() {
+      if(this.responsive && document.documentElement.clientWidth <= 768) {
+        this.hideSidebar = true;
+      }
+    }
 
   });
 }());

@@ -5,12 +5,13 @@
   100% {
     opacity: 1; } }
 
-:host([hidden]), [hidden] {
+:host([hidden]),
+[hidden] {
   display: none; }
 
 :host([show-overlay]) .overlay {
   opacity: 1;
-  z-index: 999; }
+  z-index: 998; }
 
 :host([hide-header]) .sidebar,
 :host([hide-header]) .panel-left,
@@ -66,27 +67,99 @@
 :host([hide-panel-right]):host([hide-sidebar]) .panel-left {
   width: 100%; }
 
-@media (max-width: 769px) {
-  :host([responsive]) {
+@media (max-width: 1024px) {
+  :host([responsive]) .main {
+    position: relative;
+    overflow: auto;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    overflow: auto;
+    left: var(--app-page-sidebar-width, 20%);
+    width: calc(100% - var(--app-page-sidebar-width, 20%));
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: var(--app-page-header-height, 60px);
+    transition: padding-top 200ms ease; }
+  :host([responsive]) .panel-left {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     position: relative;
-    @apply --app-page-responsive; }
-    :host([responsive]) .panel-left {
-      position: relative;
-      width: 100%;
-      height: auto;
-      @apply --app-page-responsive-panel-left; }
-    :host([responsive]) .panel-right {
-      position: relative;
-      border-left: 0;
-      border-top: 1px solid var(--app-page-border-color, #e5e5e5);
-      padding-top: 20px;
-      width: 100%;
-      @apply --app-page-responsive-panel-right; } }
+    left: 0;
+    height: auto;
+    width: 100%; }
+  :host([responsive]) .panel-right {
+    width: 100%;
+    border-top: 1px solid var(--app-page-border-color, #e5e5e5);
+    position: relative;
+    left: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-left: none;
+    width: 100%; }
+  :host([responsive]) .footer {
+    height: auto;
+    position: relative;
+    width: 100%;
+    left: 0; }
+  :host([responsive]):host([hide-header]) .main {
+    padding-top: 0; }
+  :host([responsive]):host([hide-sidebar]) .main {
+    left: 0;
+    width: 100%; }
+  :host([responsive]):host([hide-footer]) .footer {
+    display: none; }
+  :host([responsive]):host([hide-panel-right]) .panel-right {
+    display: none; } }
+
+@media (max-width: 768px) {
+  :host([responsive]) .header {
+    left: 0; }
+  :host([responsive]) .main {
+    position: relative;
+    overflow: auto;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: var(--app-page-header-height, 60px);
+    transition: padding-top 200ms ease; }
+  :host([responsive]) .panel-left {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+    left: 0;
+    height: auto;
+    width: 100%; }
+  :host([responsive]) .panel-right {
+    width: 100%;
+    border-top: 1px solid var(--app-page-border-color, #e5e5e5);
+    position: relative;
+    left: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-left: none;
+    width: 100%; }
+  :host([responsive]) .footer {
+    height: auto;
+    position: relative;
+    width: 100%;
+    left: 0; }
+  :host([responsive]):host([hide-header]) .main {
+    padding-top: 0; }
+  :host([responsive]):host([hide-footer]) .footer {
+    display: none; }
+  :host([responsive]):host([hide-panel-right]) .panel-right {
+    display: none; }
+  .opened {
+    width: 50% !important;
+    z-index: 999; }
+  .overlay.hide-content .overlay__content {
+    display: none; } }
 
 :host {
   display: block;
