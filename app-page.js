@@ -131,13 +131,13 @@
       this.showOverlay = false;
     },
     /**
-     * Close the overlay
+     * start the loading of page
      */
     startLoading: function() {
       this.showProgressBar = true;
     },
     /**
-     * Close the overlay
+     * stop the loading of page
      */
     stopLoading: function() {
       this.showProgressBar = false;

@@ -4,11 +4,79 @@
 <!--
 This component shows a page layout with an structure of one or two columns.
 
-__Example__
+This component has the next layout:
 
-```html
-<app-page title-page="blog" subtitle-page="Marked publications" fade-in></app-page>
+### overlay
+
+It´s a shadow zone, you can use his slot `overlay-content` for insert content inside of overlay.
+- With the method `openOverlay`, you can show it.
+- With the method `closeOverlay`, you can hide it.
+
+### sidebar
+
+it´s a left sidebar, you can add a nav inside of sidebar, one menu or other information, you can use his slot `sidebar-content` for insert your information .
+- it´s possible change the width of sidebar with the custom css `var(--app-page-sidebar-width)` by defaul the size is 20%. for change the width when the property responsive is true. it´s necessary use the custom css `var(--app-page-sidebar-width-open)`
+
 ```
+<style is="custom-style">
+  app-page {
+    --app-page-sidebar-width: 200px;
+    --app-page-sidebar-width-ope: 70%;
+  }
+</style>
+<app-page></app-page>
+```
+
+- It´s possible hide it with the property hideSidebar.
+- If the property responsive is true, the device width is minor than 768px, the sidebar is hide, but it´s possible open it with the method `openSidebar`.
+- For hide the sidebar with the resolution minor than 768px, it must use the method `closeSidebar`.
+
+### header
+
+It´s the header of page it´s used for show information in top of page.
+- It´s possible change the height with the custom css `var(--app-page-header-height)` by default the size is 60px.
+
+```
+<style is="custom-style">
+  app-page {
+    --app-page-header-height: 40px;
+  }
+</style>
+<app-page></app-page>
+```
+
+- It´s possible hide it with the property hideHeader.
+- It has a slot for add content inside `header-content`.
+- For show the header with fullwidth you can use `fullHeader`.
+
+### Left content
+
+It´s the principal column for show content in your component.
+
+### Right content
+
+It´s the secondary column for show content in your component.
+- It´s possible hide it with the property `hideRightContent`.
+- You can custom the width of right panel with the custom css `var(--app-page-panel-right-width)` by default the size is 80px.
+
+### Footer
+
+It´s the footer of page it´s used for show information in bottom of page.
+- It´s possible change the height with the custom css `var(--app-page-footer-height)` by default the size is 80px.
+
+```
+<style is="custom-style">
+  app-page {
+    --app-page-footer-height: 40px;
+  }
+</style>
+<app-page></app-page>
+```
+
+- It´s possible hide it with the property hideFooter.
+- It has a slot for add content inside `footer-content`.
+- For show the full footer you can do it with `fullFooter` property.
+
 
 It´s possible to configure the size of the two panels with var `--app-page-panel-right-width` the default value is 200px.
 

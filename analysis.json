@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "elements": [
     {
-      "description": "This component shows a page layout with an structure of one or two columns.\n\n__Example__\n\n```html\n<app-page title-page=\"blog\" subtitle-page=\"Marked publications\" fade-in></app-page>\n```\n\nIt´s possible to configure the size of the two panels with var `--app-page-panel-right-width` the default value is 200px.\n\nthis component is responsive at 769px if the property resposive is true. Then the right content goes down in the page",
+      "description": "This component shows a page layout with an structure of one or two columns.\n\nThis component has the next layout:\n\n### overlay\n\nIt´s a shadow zone, you can use his slot `overlay-content` for insert content inside of overlay.\n- With the method `openOverlay`, you can show it.\n- With the method `closeOverlay`, you can hide it.\n\n### sidebar\n\nit´s a left sidebar, you can add a nav inside of sidebar, one menu or other information, you can use his slot `sidebar-content` for insert your information .\n- it´s possible change the width of sidebar with the custom css `var(--app-page-sidebar-width)` by defaul the size is 20%. for change the width when the property responsive is true. it´s necessary use the custom css `var(--app-page-sidebar-width-open)`\n\n```\n<style is=\"custom-style\">\n  app-page {\n    --app-page-sidebar-width: 200px;\n    --app-page-sidebar-width-ope: 70%;\n  }\n</style>\n<app-page></app-page>\n```\n\n- It´s possible hide it with the property hideSidebar.\n- If the property responsive is true, the device width is minor than 768px, the sidebar is hide, but it´s possible open it with the method `openSidebar`.\n- For hide the sidebar with the resolution minor than 768px, it must use the method `closeSidebar`.\n\n### header\n\nIt´s the header of page it´s used for show information in top of page.\n- It´s possible change the height with the custom css `var(--app-page-header-height)` by default the size is 60px.\n\n```\n<style is=\"custom-style\">\n  app-page {\n    --app-page-header-height: 40px;\n  }\n</style>\n<app-page></app-page>\n```\n\n- It´s possible hide it with the property hideHeader.\n- It has a slot for add content inside `header-content`.\n- For show the header with fullwidth you can use `fullHeader`.\n\n### Left content\n\nIt´s the principal column for show content in your component.\n\n### Right content\n\nIt´s the secondary column for show content in your component.\n- It´s possible hide it with the property `hideRightContent`.\n- You can custom the width of right panel with the custom css `var(--app-page-panel-right-width)` by default the size is 80px.\n\n### Footer\n\nIt´s the footer of page it´s used for show information in bottom of page.\n- It´s possible change the height with the custom css `var(--app-page-footer-height)` by default the size is 80px.\n\n```\n<style is=\"custom-style\">\n  app-page {\n    --app-page-footer-height: 40px;\n  }\n</style>\n<app-page></app-page>\n```\n\n- It´s possible hide it with the property hideFooter.\n- It has a slot for add content inside `footer-content`.\n- For show the full footer you can do it with `fullFooter` property.\n\n\nIt´s possible to configure the size of the two panels with var `--app-page-panel-right-width` the default value is 200px.\n\nthis component is responsive at 769px if the property resposive is true. Then the right content goes down in the page",
       "summary": "",
       "path": "app-page.js",
       "properties": [
@@ -295,7 +295,7 @@
         },
         {
           "name": "startLoading",
-          "description": "Close the overlay",
+          "description": "start the loading of page",
           "privacy": "public",
           "sourceRange": {
             "start": {
@@ -312,7 +312,7 @@
         },
         {
           "name": "stopLoading",
-          "description": "Close the overlay",
+          "description": "stop the loading of page",
           "privacy": "public",
           "sourceRange": {
             "start": {
@@ -517,11 +517,11 @@
           "range": {
             "file": "app-page.html",
             "start": {
-              "line": 24,
+              "line": 92,
               "column": 8
             },
             "end": {
-              "line": 26,
+              "line": 94,
               "column": 15
             }
           }
@@ -532,11 +532,11 @@
           "range": {
             "file": "app-page.html",
             "start": {
-              "line": 31,
+              "line": 99,
               "column": 8
             },
             "end": {
-              "line": 33,
+              "line": 101,
               "column": 15
             }
           }
@@ -547,11 +547,11 @@
           "range": {
             "file": "app-page.html",
             "start": {
-              "line": 39,
+              "line": 107,
               "column": 8
             },
             "end": {
-              "line": 41,
+              "line": 109,
               "column": 15
             }
           }
@@ -562,11 +562,11 @@
           "range": {
             "file": "app-page.html",
             "start": {
-              "line": 50,
+              "line": 118,
               "column": 10
             },
             "end": {
-              "line": 52,
+              "line": 120,
               "column": 17
             }
           }
@@ -577,11 +577,11 @@
           "range": {
             "file": "app-page.html",
             "start": {
-              "line": 54,
+              "line": 122,
               "column": 12
             },
             "end": {
-              "line": 56,
+              "line": 124,
               "column": 19
             }
           }
@@ -592,11 +592,11 @@
           "range": {
             "file": "app-page.html",
             "start": {
-              "line": 62,
+              "line": 130,
               "column": 10
             },
             "end": {
-              "line": 64,
+              "line": 132,
               "column": 17
             }
           }
@@ -607,11 +607,11 @@
           "range": {
             "file": "app-page.html",
             "start": {
-              "line": 69,
+              "line": 137,
               "column": 10
             },
             "end": {
-              "line": 71,
+              "line": 139,
               "column": 17
             }
           }
