@@ -233,20 +233,6 @@
     padding-bottom: var(--app-page-footer-height, 80px);
     transition: padding-top 200ms ease, padding-bottom 200ms ease, left 200ms ease, width 200ms ease;
     @apply --app-page-panel-left; }
-    :host .panel-left__header {
-      display: block;
-      background-color: var(--app-page-panel-left-header-bg-color, #00695c);
-      color: var(--app-page-panel-left-header-color, #fff);
-      @apply --app-page-panel-left-header; }
-      :host .panel-left__header__title {
-        margin: 0;
-        text-transform: capitalize;
-        padding: 0.5em;
-        @apply --app-page-panel-left-header-title; }
-      :host .panel-left__header__subtitle {
-        margin: 0;
-        padding: 0.5em;
-        @apply --app-page-panel-left-header-subtitle; }
     :host .panel-left__left-content {
       height: 100%;
       width: 100%;

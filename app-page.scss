@@ -310,23 +310,6 @@
     padding-bottom: var(--app-page-footer-height, 80px);
     transition: padding-top 200ms ease, padding-bottom 200ms ease, left 200ms ease, width 200ms ease;
     @apply --app-page-panel-left;
-    &__header {
-      display: block;
-      background-color: var(--app-page-panel-left-header-bg-color, #00695c);
-      color: var(--app-page-panel-left-header-color, #fff);
-      @apply --app-page-panel-left-header;
-      &__title {
-        margin: 0;
-        text-transform: capitalize;
-        padding: 0.5em;
-        @apply --app-page-panel-left-header-title;
-      }
-      &__subtitle {
-        margin: 0;
-        padding: 0.5em;
-        @apply --app-page-panel-left-header-subtitle;
-      }
-    }
     &__left-content {
       height: 100%;
       width: 100%;

@@ -6,20 +6,6 @@
 
     properties: {
       /**
-       * title of page
-       */
-      titlePage: {
-        type: String,
-        value: null
-      },
-      /**
-       * subtitle of page
-       */
-      subtitlePage: {
-        type: String,
-        value: null
-      },
-      /**
        * if is true dont show the panel right
        */
       hidePanelRight: {

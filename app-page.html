@@ -2,7 +2,7 @@
 <link rel="import" href="app-page-styles.html">
 
 <!--
-shows a structure of page with one or two column.
+This component shows a page layout with an structure of one or two columns.
 
 __Example__
 
@@ -46,10 +46,6 @@ this component is responsive at 769px if the property resposive is true. Then th
       <div class="panel-left" id="panel-left">
         <div id="progressbar" hidden="[[!showProgressBar]]">
           <span id="loading"></span>
-        </div>
-        <div class="panel-left__header">
-          <h1 class="panel-left__header__title" hidden$="[[!titlePage]]">[[titlePage]]</h1>
-          <h2 class="panel-left__header__subtitle" hidden$="[[!subtitlePage]]">[[subtitlePage]]</h2>
         </div>
         <div class="panel-left__left-content" id="style-1">
           <slot name="left-content">
