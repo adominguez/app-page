@@ -95,26 +95,41 @@
 
     ready: function() {
       Polymer.RenderStatus.afterNextRender(this, function() {
-        this._hideSidebar();
+        let _self = this;
+        window.addEventListener('resize', function() {
+          if(_self.responsive && document.documentElement.clientWidth > 768) {
+            _self.closeSidebar();
+          }
+        })
       })
     },
 
+    /**
+     *
+     */
     openSidebar: function() {
-      this.$.sidebar.classList.add('opened');
-      this.$.overlay.classList.add('hide-content');
-      this.showOverlay = true;
+      if(this.responsive && document.documentElement.clientWidth <= 768 && !this.hideSidebar) {
+        this.$.sidebar.style= "z-index: 999";
+        this.$.sidebar.classList.add('opened');
+        this.$.overlay.classList.add('hide-content');
+        this.showOverlay = true;
+      }
     },
 
     closeSidebar: function() {
-      this.$.sidebar.classList.remove('opened');
-      this.showOverlay = false;
-      this.$.overlay.classList.remove('hide-content');
+      if(this.$.sidebar.classList.contains('opened')) {
+        this.$.sidebar.classList.remove('opened');
+        this.showOverlay = false;
+        this.$.overlay.classList.remove('hide-content');
+      }
     },
 
-    _hideSidebar: function() {
-      if(this.responsive && document.documentElement.clientWidth <= 768) {
-        this.hideSidebar = true;
-      }
+    openOverlay: function() {
+      this.showOverlay = true;
+    },
+
+    closeOverlay: function() {
+      this.showOverlay = false;
     }
 
   });
