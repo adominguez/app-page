@@ -91,6 +91,9 @@
         value: false,
         reflectToAttribute: true
       },
+      /**
+       * If is true show a progress bar for loading
+       */
       showProgressBar: {
         type: Boolean,
         value: false
