@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "elements": [
     {
-      "description": "This component shows a page layout with an structure of one or two columns.\n\nThis component has the next layout:\n\n### overlay\n\nIt´s a shadow zone, you can use his slot `overlay-content` for insert content inside of overlay.\n- With the method `openOverlay`, you can show it.\n- With the method `closeOverlay`, you can hide it.\n\n### sidebar\n\nit´s a left sidebar, you can add a nav inside of sidebar, one menu or other information, you can use his slot `sidebar-content` for insert your information .\n- it´s possible change the width of sidebar with the custom css `var(--app-page-sidebar-width)` by defaul the size is 20%. for change the width when the property responsive is true. it´s necessary use the custom css `var(--app-page-sidebar-width-open)`\n\n```\n<style is=\"custom-style\">\n  app-page {\n    --app-page-sidebar-width: 200px;\n    --app-page-sidebar-width-ope: 70%;\n  }\n</style>\n<app-page></app-page>\n```\n\n- It´s possible hide it with the property hideSidebar.\n- If the property responsive is true, the device width is minor than 768px, the sidebar is hide, but it´s possible open it with the method `openSidebar`.\n- For hide the sidebar with the resolution minor than 768px, it must use the method `closeSidebar`.\n\n### header\n\nIt´s the header of page it´s used for show information in top of page.\n- It´s possible change the height with the custom css `var(--app-page-header-height)` by default the size is 60px.\n\n```\n<style is=\"custom-style\">\n  app-page {\n    --app-page-header-height: 40px;\n  }\n</style>\n<app-page></app-page>\n```\n\n- It´s possible hide it with the property hideHeader.\n- It has a slot for add content inside `header-content`.\n- For show the header with fullwidth you can use `fullHeader`.\n\n### Left content\n\nIt´s the principal column for show content in your component.\n\n### Right content\n\nIt´s the secondary column for show content in your component.\n- It´s possible hide it with the property `hideRightContent`.\n- You can custom the width of right panel with the custom css `var(--app-page-panel-right-width)` by default the size is 80px.\n\n### Footer\n\nIt´s the footer of page it´s used for show information in bottom of page.\n- It´s possible change the height with the custom css `var(--app-page-footer-height)` by default the size is 80px.\n\n```\n<style is=\"custom-style\">\n  app-page {\n    --app-page-footer-height: 40px;\n  }\n</style>\n<app-page></app-page>\n```\n\n- It´s possible hide it with the property hideFooter.\n- It has a slot for add content inside `footer-content`.\n- For show the full footer you can do it with `fullFooter` property.\n\n\nIt´s possible to configure the size of the two panels with var `--app-page-panel-right-width` the default value is 200px.\n\nthis component is responsive at 769px if the property resposive is true. Then the right content goes down in the page",
+      "description": "This component shows a page layout with an structure of one or two columns.\n\nThis component has the next layout:\n\n### overlay\n\nIt´s a shadow zone, you can use his slot `overlay-content` for insert content inside of overlay.\n- With the method `openOverlay`, you can show it.\n- With the method `closeOverlay`, you can hide it.\n\n### sidebar\n\nit´s a left sidebar, you can add a nav inside of sidebar, one menu or other information, you can use his slot `sidebar-content` for insert your information .\n- it´s possible change the width of sidebar with the custom css `var(--app-page-sidebar-width)` by defaul the size is 20%. for change the width when the property responsive is true. it´s necessary use the custom css `var(--app-page-sidebar-width-open)`\n\n```\n<style is=\"custom-style\">\n  app-page {\n    --app-page-sidebar-width: 200px;\n    --app-page-sidebar-width-ope: 70%;\n  }\n</style>\n<app-page></app-page>\n```\n\n- It´s possible hide it with the property hideSidebar.\n- If the property responsive is true, the device width is minor than 768px, the sidebar is hide, but it´s possible open it with the method `openSidebar`.\n- For hide the sidebar with the resolution minor than 768px, it must use the method `closeSidebar`.\n\n### header\n\nIt´s the header of page it´s used for show information in top of page.\n- It´s possible change the height with the custom css `var(--app-page-header-height)` by default the size is 60px.\n\n```\n<style is=\"custom-style\">\n  app-page {\n    --app-page-header-height: 40px;\n  }\n</style>\n<app-page></app-page>\n```\n\n- It´s possible hide it with the property hideHeader.\n- It has a slot for add content inside `header-content`.\n- For show the header with fullwidth you can use `fullHeader`.\n\n### Left content\n\nIt´s the principal column for show content in your component.\n\n### Right content\n\nIt´s the secondary column for show content in your component.\n- It´s possible hide it with the property `hideRightContent`.\n- You can custom the width of right panel with the custom css `var(--app-page-panel-right-width)` by default the size is 80px.\n\n### Footer\n\nIt´s the footer of page it´s used for show information in bottom of page.\n- It´s possible change the height with the custom css `var(--app-page-footer-height)` by default the size is 80px.\n\n```\n<style is=\"custom-style\">\n  app-page {\n    --app-page-footer-height: 40px;\n  }\n</style>\n<app-page></app-page>\n```\n\n- It´s possible hide it with the property hideFooter.\n- It has a slot for add content inside `footer-content`.\n- For show the full footer you can do it with `fullFooter` property.\n\n### bottomsheet\n\nIt´s a bottom zone, it´s hide. It can shows with the method `openBottomSheet`and it´s closed with the method `closeBottomSheet`\n- It´s possible change the value of the height with the custom css `--app-page-bottomsheet-height`",
       "summary": "",
       "path": "app-page.js",
       "properties": [
@@ -205,6 +205,26 @@
             "polymer": {}
           },
           "defaultValue": "false"
+        },
+        {
+          "name": "showBottomsheet",
+          "type": "boolean",
+          "description": "If is true shows a bottom region",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 89,
+              "column": 6
+            },
+            "end": {
+              "line": 93,
+              "column": 7
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          },
+          "defaultValue": "false"
         }
       ],
       "methods": [
@@ -214,11 +234,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 88,
+              "line": 96,
               "column": 4
             },
             "end": {
-              "line": 97,
+              "line": 105,
               "column": 5
             }
           },
@@ -231,11 +251,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 102,
+              "line": 110,
               "column": 4
             },
             "end": {
-              "line": 109,
+              "line": 117,
               "column": 5
             }
           },
@@ -248,11 +268,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 113,
+              "line": 121,
               "column": 4
             },
             "end": {
-              "line": 119,
+              "line": 127,
               "column": 5
             }
           },
@@ -265,11 +285,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 123,
+              "line": 131,
               "column": 4
             },
             "end": {
-              "line": 125,
+              "line": 133,
               "column": 5
             }
           },
@@ -282,11 +302,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 129,
+              "line": 137,
               "column": 4
             },
             "end": {
-              "line": 131,
+              "line": 139,
               "column": 5
             }
           },
@@ -299,11 +319,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 135,
+              "line": 143,
               "column": 4
             },
             "end": {
-              "line": 137,
+              "line": 145,
               "column": 5
             }
           },
@@ -316,11 +336,45 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 141,
+              "line": 149,
               "column": 4
             },
             "end": {
-              "line": 143,
+              "line": 151,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "openBottomSheet",
+          "description": "Open bottomsheet",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 155,
+              "column": 4
+            },
+            "end": {
+              "line": 157,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "closeBottomSheet",
+          "description": "Open bottomsheet",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 161,
+              "column": 4
+            },
+            "end": {
+              "line": 163,
               "column": 5
             }
           },
@@ -337,7 +391,7 @@
           "column": 10
         },
         "end": {
-          "line": 145,
+          "line": 165,
           "column": 3
         }
       },
@@ -503,6 +557,22 @@
           },
           "metadata": {},
           "type": "boolean"
+        },
+        {
+          "name": "show-bottomsheet",
+          "description": "If is true shows a bottom region",
+          "sourceRange": {
+            "start": {
+              "line": 89,
+              "column": 6
+            },
+            "end": {
+              "line": 93,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "type": "boolean"
         }
       ],
       "events": [],
@@ -517,11 +587,11 @@
           "range": {
             "file": "app-page.html",
             "start": {
-              "line": 92,
+              "line": 93,
               "column": 8
             },
             "end": {
-              "line": 94,
+              "line": 95,
               "column": 15
             }
           }
@@ -532,11 +602,11 @@
           "range": {
             "file": "app-page.html",
             "start": {
-              "line": 99,
+              "line": 100,
               "column": 8
             },
             "end": {
-              "line": 101,
+              "line": 102,
               "column": 15
             }
           }
@@ -547,11 +617,11 @@
           "range": {
             "file": "app-page.html",
             "start": {
-              "line": 107,
+              "line": 108,
               "column": 8
             },
             "end": {
-              "line": 109,
+              "line": 110,
               "column": 15
             }
           }
@@ -562,11 +632,11 @@
           "range": {
             "file": "app-page.html",
             "start": {
-              "line": 118,
+              "line": 119,
               "column": 10
             },
             "end": {
-              "line": 120,
+              "line": 121,
               "column": 17
             }
           }
@@ -577,11 +647,11 @@
           "range": {
             "file": "app-page.html",
             "start": {
-              "line": 122,
+              "line": 123,
               "column": 12
             },
             "end": {
-              "line": 124,
+              "line": 125,
               "column": 19
             }
           }
@@ -592,11 +662,11 @@
           "range": {
             "file": "app-page.html",
             "start": {
-              "line": 130,
+              "line": 131,
               "column": 10
             },
             "end": {
-              "line": 132,
+              "line": 133,
               "column": 17
             }
           }
@@ -607,12 +677,27 @@
           "range": {
             "file": "app-page.html",
             "start": {
-              "line": 137,
+              "line": 138,
               "column": 10
             },
             "end": {
-              "line": 139,
+              "line": 140,
               "column": 17
+            }
+          }
+        },
+        {
+          "description": "",
+          "name": "bottomsheet-content",
+          "range": {
+            "file": "app-page.html",
+            "start": {
+              "line": 146,
+              "column": 8
+            },
+            "end": {
+              "line": 148,
+              "column": 15
             }
           }
         }

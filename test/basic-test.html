@@ -73,6 +73,13 @@
             assert.isTrue(isVisible(el.$.overlay));
           });
         });
+
+        suite('bottomSheet', function() {
+          test('On fire openOverlay must be show the overlay', function() {
+            el.openBottomSheet();
+            assert.isTrue(isVisible(el.$.bottomsheet));
+          });
+        });
       });
     </script>
 

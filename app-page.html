@@ -77,10 +77,11 @@ It´s the footer of page it´s used for show information in bottom of page.
 - It has a slot for add content inside `footer-content`.
 - For show the full footer you can do it with `fullFooter` property.
 
+### bottomsheet
 
-It´s possible to configure the size of the two panels with var `--app-page-panel-right-width` the default value is 200px.
+It´s a bottom zone, it´s hide. It can shows with the method `openBottomSheet`and it´s closed with the method `closeBottomSheet`
+- It´s possible change the value of the height with the custom css `--app-page-bottomsheet-height`
 
-this component is responsive at 769px if the property resposive is true. Then the right content goes down in the page
 
 -->
 
@@ -139,6 +140,13 @@ this component is responsive at 769px if the property resposive is true. Then th
             footer content
           </slot>
         </div>
+      </div>
+    </div>
+    <div class="bottomsheet" id="bottomsheet">
+      <div class="bottomsheet__content">
+        <slot name="bottomsheet-content">
+          bottomsheet content
+        </slot>
       </div>
     </div>
   </template>

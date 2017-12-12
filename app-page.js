@@ -83,6 +83,14 @@
       showProgressBar: {
         type: Boolean,
         value: false
+      },
+      /**
+       * If is true shows a bottom region
+       */
+      showBottomsheet: {
+        type: Boolean,
+        value: false,
+        reflectToAttribute: true
       }
     },
 
@@ -141,6 +149,18 @@
      */
     stopLoading: function() {
       this.showProgressBar = false;
+    },
+    /**
+     * Open bottomsheet
+     */
+    openBottomSheet: function() {
+      this.showBottomsheet = true;
+    },
+    /**
+     * Open bottomsheet
+     */
+    closeBottomSheet: function() {
+      this.showBottomsheet = false;
     },
 
   });
